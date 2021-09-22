@@ -37,9 +37,9 @@ public class TodoList {
 
 	public void listAll() {
 		System.out.println("\n"
-				+ "inside list_All method\n");
+				+ "Inside the list\n");
 		for (TodoItem myitem : list) {
-			System.out.println(myitem.getTitle() + myitem.getDesc());
+			System.out.println(myitem.getTitle() + myitem.getDesc() + myitem.getCurrent_date());
 		}
 	}
 	
@@ -60,5 +60,9 @@ public class TodoList {
 			if (title.equals(item.getTitle())) return true;
 		}
 		return false;
+	}
+
+	public int size() {
+		return list.size();
 	}
 }

@@ -1,6 +1,15 @@
 package com.todo.service;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.*;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 
 import com.todo.dao.TodoItem;
 import com.todo.dao.TodoList;
@@ -13,17 +22,17 @@ public class TodoUtil {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("\n"
-				+ "========== Create item Section\n"
-				+ "enter the title\n");
+				+ "Create item has been selected\n"
+				+ "Please enter the title\n");
 		
 		title = sc.next();
 		if (list.isDuplicate(title)) {
-			System.out.printf("title can't be duplicate");
+			System.out.printf("Title can't be duplicate");
 			return;
 		}
-		
-		System.out.println("enter the description");
-		desc = sc.next();
+		sc.nextLine();
+		System.out.println("Please enter description");
+		desc = sc.nextLine().trim();
 		
 		TodoItem t = new TodoItem(title, desc);
 		list.addItem(t);
@@ -35,8 +44,8 @@ public class TodoUtil {
 		String title = sc.next();
 		
 		System.out.println("\n"
-				+ "========== Delete Item Section\n"
-				+ "enter the title of item to remove\n"
+				+ "Delete item has been selected\n"
+				+ "Please enter the title of item you want to remove\n"
 				+ "\n");
 		
 		for (TodoItem item : l.getList()) {
@@ -53,30 +62,31 @@ public class TodoUtil {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("\n"
-				+ "========== Edit Item Section\n"
-				+ "enter the title of the item you want to update\n"
+				+ "Edit item has been selected\n"
+				+ "Please enter the title of the item you want to update\n"
 				+ "\n");
 		String title = sc.next().trim();
 		if (!l.isDuplicate(title)) {
-			System.out.println("title doesn't exist");
-			return;
-		}
-
-		System.out.println("enter the new title of the item");
-		String new_title = sc.next().trim();
-		if (l.isDuplicate(new_title)) {
-			System.out.println("title can't be duplicate");
+			System.out.println("Title doesn't exist");
 			return;
 		}
 		
-		System.out.println("enter the new description ");
+		sc.nextLine();
+		System.out.println("Enter the new title of the item");
+		String new_title = sc.next().trim();
+		if (l.isDuplicate(new_title)) {
+			System.out.println("Title can't be duplicate");
+			return;
+		}
+		
+		System.out.println("Enter the new description ");
 		String new_description = sc.next().trim();
 		for (TodoItem item : l.getList()) {
 			if (item.getTitle().equals(title)) {
 				l.deleteItem(item);
 				TodoItem t = new TodoItem(new_title, new_description);
 				l.addItem(t);
-				System.out.println("item updated");
+				System.out.println("Item has been updated");
 			}
 		}
 
@@ -84,7 +94,40 @@ public class TodoUtil {
 
 	public static void listAll(TodoList l) {
 		for (TodoItem item : l.getList()) {
-			System.out.println("Item Title: " + item.getTitle() + "  Item Description:  " + item.getDesc());
+			System.out.println(item.toString());
 		}
+	}
+
+	public static void saveList(TodoList l, String filename) {
+		try {
+			Writer w = new FileWriter(filename);
+			TodoItem in = new TodoItem(filename, filename);
+			for(int i=0;i<l.size();i++) {
+				w.write(in.toSaveString());
+			}
+			w.close();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void loadList(TodoList l, String filename) {
+		BufferedReader bf;
+		try {
+			bf = new BufferedReader(new FileReader("todolist.txt"));
+			try {
+				bf.readLine();
+			} catch (IOException e) {
+				System.out.println("todolist.txt 파일 존재하지 않습니다.");
+			}
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("todolist.txt 파일 존재하지 않습니다.");
+		}
+		
 	}
 }
