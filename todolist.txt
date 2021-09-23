@@ -1,4 +1,10 @@
-todolist.txt##todolist.txt##2021/09/23 04:17:19
-todolist.txt##todolist.txt##2021/09/23 04:17:19
-todolist.txt##todolist.txt##2021/09/23 04:17:19
-todolist.txt##todolist.txt##2021/09/23 04:17:19
+Name##Charlie Bone##2021/09/23 16:06:52
+Birth_Year##1992##2021/09/23 16:10:40
+Age(Standard:2021)##29##2021/09/23 16:11:11
+Hair_Color##Black##2021/09/23 16:11:28
+Eye_Color##Brown##2021/09/23 16:12:36
+Father's_Name##Lyell Bone##2021/09/23 16:12:57
+Mother's_Name##Maisie Jones##2021/09/23 16:13:07
+Race##Descendent of the Red King##2021/09/23 16:13:27
+Ability##Picture-travel & Magic##2021/09/23 16:13:42
+Status##Endowed##2021/09/23 16:14:28

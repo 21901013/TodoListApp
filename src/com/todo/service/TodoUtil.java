@@ -101,9 +101,8 @@ public class TodoUtil {
 	public static void saveList(TodoList l, String filename) {
 		try {
 			Writer w = new FileWriter(filename);
-			TodoItem in = new TodoItem(filename, filename);
-			for(int i=0;i<l.size();i++) {
-				w.write(in.toSaveString());
+			for(TodoItem item:l.getList()) {
+				w.write(item.toSaveString());
 			}
 			w.close();
 			
@@ -119,14 +118,18 @@ public class TodoUtil {
 		BufferedReader bf;
 		try {
 			bf = new BufferedReader(new FileReader("todolist.txt"));
-			try {
-				bf.readLine();
-			} catch (IOException e) {
-				System.out.println("todolist.txt 파일 존재하지 않습니다.");
+			String oneline;
+			while((oneline=bf.readLine()) != null) {
+				StringTokenizer st = new StringTokenizer(oneline,"##");
+				String title = st.nextToken();
+				String desc = st.nextToken();
+				TodoItem it = new TodoItem(title,desc);
+				System.out.println(it.toSaveString());
 			}
-			
 		} catch (FileNotFoundException e) {
-			System.out.println("todolist.txt 파일 존재하지 않습니다.");
+			System.out.println("todolist.txt 파일이 존재하지 않습니다.");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 	}
