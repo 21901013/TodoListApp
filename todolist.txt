@@ -1,6 +1,10 @@
-Bone##Charlie##endowed and magician##1992##2021/09/25 14:40:25
-Jackson##Percy##anything related to water or ocean##1993##2021/09/25 14:40:25
-Chase##Annabeth##wisdom##1994##2021/09/25 14:40:25
-Weasely##Ron##wizard##1980##2021/09/25 14:40:25
-Potter##James##1955##2021/09/25 14:15:30##2021/09/25 14:40:25
-Bone##Lyell##unendowed##1965##2021/09/25 14:40:25
+Etc##Hobby##Read novels and books##2021/09/27##2021/09/25 16:06:57
+Want##Watch_Drama##Finish and start dramas##2021/12/28##2021/09/25 16:06:37
+Everyday##Self_Study##Discrete Mathematics##2021/10/05##2021/09/25 16:06:37
+Etc##Exercise##Walk or run##2021/10/25##2021/09/25 16:06:37
+Eat##Roommate_Together##Eating lunch with roommates##2021/09/30##2021/09/25 16:06:37
+Lecture##Watch_Video_Lecture##Computer Networks##2021/09/29##2021/09/25 16:06:37
+Lecture##Watch_Lecture##Linear Equation video lecture##2021/09/27##2021/09/25 16:06:37
+Homework##Report##EAP-IT English report##2021/09/27##2021/09/25 16:06:37
+Homework##Coding##Once every week##2021/09/26##2021/09/25 16:06:37
+Meeting##Computer_Science_Study##Weekly schedule##2021/12/10##2021/09/25 16:06:37
