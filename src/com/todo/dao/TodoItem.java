@@ -10,13 +10,6 @@ public class TodoItem {
     private String category;
     private String due_date;
     
-	public TodoItem(String title, String desc){
-        this.title=title;
-        this.desc=desc;
-        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
-        this.current_date= df.format(new Date());
-    }
-    
 	public TodoItem(String category, String title, String desc, String due_date){
 		this.category=category;
         this.title=title;
