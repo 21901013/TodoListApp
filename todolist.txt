@@ -1,10 +1,6 @@
-Name##Charlie Bone##2021/09/23 16:06:52
-Birth_Year##1992##2021/09/23 16:10:40
-Age(Standard:2021)##29##2021/09/23 16:11:11
-Hair_Color##Black##2021/09/23 16:11:28
-Eye_Color##Brown##2021/09/23 16:12:36
-Father's_Name##Lyell Bone##2021/09/23 16:12:57
-Mother's_Name##Maisie Jones##2021/09/23 16:13:07
-Race##Descendent of the Red King##2021/09/23 16:13:27
-Ability##Picture-travel & Magic##2021/09/23 16:13:42
-Status##Endowed##2021/09/23 16:14:28
+Bone##Charlie##endowed and magician##1992##2021/09/25 14:40:25
+Jackson##Percy##anything related to water or ocean##1993##2021/09/25 14:40:25
+Chase##Annabeth##wisdom##1994##2021/09/25 14:40:25
+Weasely##Ron##wizard##1980##2021/09/25 14:40:25
+Potter##James##1955##2021/09/25 14:15:30##2021/09/25 14:40:25
+Bone##Lyell##unendowed##1965##2021/09/25 14:40:25

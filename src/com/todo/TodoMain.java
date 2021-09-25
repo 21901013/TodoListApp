@@ -21,6 +21,7 @@ public class TodoMain {
 			Menu.prompt();
 			isList = false;
 			String choice = sc.next();
+			
 			switch (choice) {
 
 			case "add":
@@ -36,6 +37,7 @@ public class TodoMain {
 				break;
 				
 			case "ls":
+				System.out.print("[ Entire List, Total ");
 				TodoUtil.listAll(l);
 				break;
 
@@ -58,8 +60,29 @@ public class TodoMain {
 				isList = true;
 				break;
 				
+			case "ls_date_desc":
+				l.sortByDate();
+				l.reverseList();
+				System.out.println("Sorting complete");
+				isList = true;
+				break;
+				
 			case "help":
 				Menu.displaymenu();
+				break;
+				
+			case "find":
+				String key_word1 = sc.next();
+				TodoUtil.findItem(l, key_word1);
+				break;
+				
+			case "find_cate":
+				String key_word2 = sc.next();
+				TodoUtil.find_cateItem(l,key_word2);
+				break;
+				
+			case "ls_cate":
+				TodoUtil.listCategory(l);
 				break;
 
 			case "exit":

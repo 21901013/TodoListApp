@@ -16,8 +16,8 @@ public class TodoList {
 		list.add(t);
 	}
 
-	public void deleteItem(TodoItem t) {
-		list.remove(t);
+	public void deleteItem(int index) {
+		list.remove((index-1));
 	}
 
 	void editItem(TodoItem t, TodoItem updated) {
@@ -25,7 +25,7 @@ public class TodoList {
 		list.remove(index);
 		list.add(updated);
 	}
-
+	
 	public ArrayList<TodoItem> getList() {
 		return new ArrayList<TodoItem>(list);
 	}
@@ -38,8 +38,10 @@ public class TodoList {
 	public void listAll() {
 		System.out.println("\n"
 				+ "Inside the list\n");
+		int count = 1;
 		for (TodoItem myitem : list) {
-			System.out.println(myitem.getTitle() + myitem.getDesc() + myitem.getCurrent_date());
+			System.out.println(count+". "+myitem.toString());
+			count++;
 		}
 	}
 	
@@ -64,5 +66,13 @@ public class TodoList {
 
 	public int size() {
 		return list.size();
+	}
+
+	public TodoItem get(int index) {
+		return list.get(index);
+	}
+	
+	public String getCate(TodoItem item) {
+		return item.getCategory();
 	}
 }
