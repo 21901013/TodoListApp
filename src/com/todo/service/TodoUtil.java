@@ -59,6 +59,7 @@ public class TodoUtil {
 	public static void updateItem(TodoList l) {
 		
 		Scanner sc = new Scanner(System.in);
+		String new_title, new_category, new_description, new_due_date;
 		
 		System.out.println("\n"
 				+ "Edit item has been selected\n"
@@ -75,28 +76,24 @@ public class TodoUtil {
 		
 		System.out.println(l.get((index-1)));
 		
-		System.out.println("Enter the new title of the item\n");
-		String new_title = sc.next();
+		System.out.println("\nEnter the new title of the item\n");
+		new_title = sc.next();
 		if (l.isDuplicate(new_title)) {
 			System.out.println("Title can't be duplicated\n");
 			return;
 		}
 		
-		sc.nextLine();
 		System.out.println("Enter the new category of the item\n");
-		String new_category = sc.next().trim();
-		if (l.isDuplicate(new_category)) {
-			System.out.println("Category can't be duplicate\n");
-			return;
-		}
+		new_category = sc.next();
 		
 		System.out.println("Enter the new description\n");
-		String new_description = sc.nextLine().trim();
+		new_description = sc.next().trim();
 		
+		String now = sc.nextLine();
 		System.out.println("Enter the new due date\n");
-		String new_due_date = sc.next();
+		new_due_date = sc.next();
 		l.deleteItem(index);
-		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date);
+		TodoItem t = new TodoItem(new_category, new_title, (new_description+now), new_due_date);
 		l.addItem(t);
 		System.out.println("Item has been updated\n");
 	}
